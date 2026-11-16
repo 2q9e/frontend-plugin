@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 2q9e. See LICENSE for terms. -->
+
 # AI Frontend Studio
 
 **Repository description:** Project-aware frontend design, implementation, and quality workflows for Codex, from landing pages and interaction states to motion, 3D, security, performance, and rendered UI review.
