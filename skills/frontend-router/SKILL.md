@@ -1,6 +1,6 @@
 ---
 name: frontend-router
-description: Route frontend requests to the smallest relevant AI Frontend Studio skills. Use for website, landing page, visual design, logo, interaction, motion, 3D, security, performance, or rendered UI work, and when the user explicitly asks what this plugin can do.
+description: Route frontend requests to the smallest relevant AI Frontend Studio skills. Use for website, landing page, product-specific visual design, anti-generic review, logo, interaction, motion, 3D, security, performance, or rendered UI work, and when the user explicitly asks what this plugin can do.
 ---
 
 # Frontend router
@@ -36,10 +36,16 @@ End with: “Which one would you like to work on? Reply with a number or describ
 ## Inspect before routing
 
 1. Read applicable repository instructions and identify the project root.
-2. Inspect the relevant framework, package manager, routes, components, design tokens, typography, icon system, assets, behavior, and checks.
+2. Inspect the relevant framework, package manager, routes, components, design tokens, typography, icon system, assets, behavior, and checks. Look for project design guidance such as `DESIGN.md`, brand/style documents, component documentation, or an established token source; verify it against current components and the rendered interface.
 3. Read the packaged skill descriptions and the full instructions for the smallest set of relevant skills. If the host exposes a documented dynamic skill-loading mechanism, use it. If it does not, consult the available files as instructions and do not claim that they were automatically loaded.
 4. Inspect the actual connected-tool inventory for this chat before selecting tools. A package reference or skill does not prove that an MCP, browser, image tool, scanner, filesystem, or command runner is available.
 5. Summarize the requested outcome, constraints, target devices, and acceptance criteria. Preserve unrelated existing behavior.
+
+## Work modes and reference selection
+
+Internally classify the task as **create**, **focused improve**, **audit**, or **plan**. An audit is read-only unless the user authorizes fixes; a plan does not implement. Use the [design contract](../../references/design-contract.md) when multiple surfaces, interaction states, or acceptance checks need a shared plan. Keep the note brief or omit it for a trivial change.
+
+Before retrieving examples or stack guidance, filter by the user's goal, the existing framework/design system, platform, interaction state, and constraints. Use the [design-pattern index](../../references/design-pattern-index.md) to select only relevant package references. Check that each selected source applies to the detected stack and version; if no source fits after a narrower search, say no verified match was found. Do not expose a catalog of tools or make the user choose implementation skills.
 
 ## Skill route map
 
@@ -54,6 +60,8 @@ End with: “Which one would you like to work on? Reply with a number or describ
 | Frontend security review | frontend-router → frontend-security; use a connected scanner only if it actually exists and is relevant |
 | Performance review | frontend-router → frontend-performance + rendered-ui-review when rendering evidence is available |
 | Responsive, accessibility, or visual review | frontend-router → rendered-ui-review; load other specialists in response to findings |
+| Compare a supplied screenshot or design with a rendered implementation | frontend-router → rendered-ui-review; add art-direction only if the requested work changes direction |
+| Diagnose generic visual patterns or verify design-system fit | frontend-router → art-direction + rendered-ui-review; consult the anti-generic review and optional source-signal scan |
 | Other frontend work | frontend-router chooses the smallest relevant skill set or uses available host tools and states any coverage gap |
 
 ## MCP and host-tool decision map
@@ -80,7 +88,7 @@ Use local file and command tools only when the host actually provides them. Comb
 5. Prevent duplicate side effects. After an uncertain order, payment, or upload result, reconcile with authoritative status before retrying. Reuse an idempotency identity only for the same logical request; a changed request needs a new identity.
 6. For motion, honor reduced-motion preferences, preserve ordinary scrolling, and clean up listeners, observers, timelines, and animation frames.
 7. For 3D, distinguish modeling from rendering; keep meaningful content in HTML, provide a static/poster fallback, lazy-load, reduce idle work, and dispose owned GPU resources.
-8. Inspect rendered output at representative wide and narrow sizes when browser tools are available. Otherwise report source-only review.
+8. Inspect rendered output at representative wide and narrow sizes when browser tools are available. When a source screenshot or design exists, compare it with a capture of the implementation at the same route, viewport, theme, content, and interaction state; if these cannot be aligned, report the comparison as not comparable. Otherwise report source-only review.
 9. Report changed files, evidence, tools and states actually checked, limitations, and server/owner actions still needed.
 
 ## Claims and references

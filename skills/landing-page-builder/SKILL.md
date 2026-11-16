@@ -7,13 +7,15 @@ description: Build or refine a responsive marketing, product, or campaign landin
 
 Build a complete page around the user's product and audience. A landing page is a guided story and working interface, not a collection of generic sections.
 
+For work spanning multiple sections or states, use the [design contract](../../references/design-contract.md) as a concise acceptance plan. For a focused page change, keep the plan in the response and avoid creating project-wide design files.
+
 ## Workflow
 
 1. **Inspect before editing.** Identify the framework, route structure, existing layouts, components, design tokens, typography, icon system, image pipeline, CSS conventions, and available run/render tools. Read any project-specific instructions relevant to the target files. Preserve the existing design system and reuse its components. Avoid replacing the stack, adding a competing component library, or refactoring unrelated areas.
 
 2. **Ground the page in real context.** From the brief and existing product, identify the audience, the task or decision this page supports, the main value proposition, the primary action, approved proof, brand constraints, and any device or accessibility requirements. Do not invent outcomes, customer names, testimonials, pricing, guarantees, security claims, or capabilities. Do not use lorem ipsum or generic filler. If an important fact is missing, ask a focused question or leave it out and report what content is needed.
 
-3. **Plan the story before styling.** Draft a page outline that answers the audience's likely questions in an order that fits the product: what it is, who it helps, why it matters, how it works, what evidence supports it, and what the next step is. Choose only sections that earn their place. There is no mandatory hero-plus-three-cards-plus-testimonials formula; familiar patterns are fine when they serve the message. Use concise, specific copy drawn from approved facts.
+3. **Plan the story before styling.** Draft a page outline that answers the audience's likely questions in an order that fits the product: what it is, who it helps, why it matters, how it works, what evidence supports it, and what the next step is. Choose only sections that earn their place. There is no mandatory hero-plus-three-cards-plus-testimonials formula; familiar patterns are fine when they serve the message. Use concise, specific copy drawn from approved facts. Check for template-shaped section sequences and repeated claims with the [anti-generic review](../../references/anti-generic-review.md), but keep patterns that are a good fit.
 
 4. **Set or confirm art direction.** If the brief and existing interface do not establish a direction, use [art-direction](../art-direction/SKILL.md) to define one before building. Keep the direction consistent across typography, color, grid, imagery, surfaces, components, and motion. Use the shared [design rubric](../../references/design-rubric.md) when evaluating tradeoffs.
 
@@ -30,5 +32,6 @@ Build a complete page around the user's product and audience. A landing page is 
 ## Reference use and limits
 
 - Use the shared [source index](../../references/source-index.md) for source-available landing pages, design systems, and interaction examples. Study their composition, tokens, and state handling; do not copy their code, wording, logos, or media wholesale. Re-check licenses and asset provenance before reuse.
+- Use the [design-pattern index](../../references/design-pattern-index.md) to find stack- and task-relevant guidance. Prefer the project's own components and references over importing a large style catalog or preset.
 - Use only browser, design, image, and local development tools available in the current environment. Do not claim Figma inspection, image generation, browser rendering, accessibility scanning, or performance measurement unless that action actually occurred.
 - A landing page review does not establish backend security, payment correctness, accessibility conformance, or field performance. Report only the behavior and evidence that were actually inspected.

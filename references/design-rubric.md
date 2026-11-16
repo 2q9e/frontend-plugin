@@ -17,6 +17,16 @@ Use this as a review rubric, not a design template. Discuss only criteria releva
 - Section rhythm supports a narrative; components do not repeat without reason.
 - Product imagery, interface screenshots, diagrams, or authored graphics support the content. Avoid generic decorative imagery and fabricated customer proof.
 
+## Distinctiveness without a style blacklist
+
+- Does the page structure answer this product's questions, or repeat a default section sequence without a reason?
+- Are typography, colors, effects, density, and component shapes grounded in the product or its existing design system?
+- Do repeated ornaments or repeated claims add meaning, or only mimic a familiar AI-generated look?
+- Is there a concrete, product-specific visual or interaction idea that helps users understand or act?
+- Is a flagged pattern actually harmful here? Keep a familiar pattern when it improves clarity, access, trust, or consistency.
+
+Use [anti-generic interface review](anti-generic-review.md) for examples and exceptions. A visual signal is a prompt to inspect the design, not an automatic defect.
+
 ## Responsive behavior
 
 - Layout reflows for narrow screens instead of merely shrinking.
@@ -38,3 +48,5 @@ Use this as a review rubric, not a design template. Discuss only criteria releva
 - **Fixed:** concrete issues changed in source.
 - **Not checked:** states or criteria not reachable with available tools.
 - **Needs human judgment:** brand/taste, content truth, trademark clearance, and accessibility checks that automation does not cover.
+
+For work with multiple surfaces or states, record observable checks using the [design contract](design-contract.md). Keep subjective visual preferences separate from pass/fail implementation evidence.

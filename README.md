@@ -1,10 +1,8 @@
-<!-- Copyright (c) 2026 2q9e. See LICENSE for terms. -->
-
 # AI Frontend Studio
 
-**Repository description:** Project-aware frontend design, implementation, and quality workflows for Codex, from landing pages and interaction states to motion, 3D, security, performance, and rendered UI review.
+**Repository description:** Product-aware frontend design, anti-generic review, implementation, and quality workflows for Codex.
 
-AI Frontend Studio is a skills-only plugin package. Its ten focused skills help an agent work in an existing frontend project, preserve its design system, build real interface behavior, and report what it could and could not verify. The package contains reusable instructions, references, original examples, and an editable SVG mark. It does not bundle an MCP server, browser, design editor, image generator, security scanner, backend, or 3D modeling application.
+AI Frontend Studio is a skills-only plugin package with ten focused skills, original references and examples, an editable SVG mark, and an optional read-only source-signal checker. It helps an agent work in an existing frontend project, preserve its design system, build real interface behavior, and report what it could and could not verify. It does not bundle an MCP server, browser, design editor, image generator, security scanner, backend, or 3D modeling application.
 
 ## Capabilities
 
@@ -19,7 +17,22 @@ AI Frontend Studio is a skills-only plugin package. Its ten focused skills help 
 | Review frontend security | frontend-router → frontend-security; use a connected scanner only when one is actually available and relevant |
 | Measure or improve performance | frontend-router → frontend-performance; add rendered-ui-review when rendering evidence is available |
 | Review responsive behavior, accessibility, or visual quality | frontend-router → rendered-ui-review; select other specialists based on findings |
+| Compare an implementation with a supplied screenshot or design | frontend-router → rendered-ui-review; add art-direction if the task also changes the visual direction |
+| Create, refine, audit, or plan a frontend experience | frontend-router selects the matching work mode; use the design contract for shared acceptance checks |
 | Handle another frontend task | frontend-router selects the smallest relevant skill set or works with available host tools and states any coverage gap |
+
+## Design process and anti-generic review
+
+The workflow supports four modes: create, focused improve, audit, and plan. The [design contract](references/design-contract.md) records which project sources define the current system, any conflicts between them, and observable acceptance checks. The [anti-generic review](references/anti-generic-review.md) treats familiar layouts and effects as signals to inspect, not styles to ban. The [design-pattern index](references/design-pattern-index.md) narrows references by task, platform, stack, and interaction need. Screenshot comparisons are meaningful only when route, viewport, state, theme, and content are aligned; unmatched evidence is reported as not comparable.
+
+An optional standard-library Python 3.9+ script scans source for explicit placeholder copy, placeholder image hosts, and empty link targets:
+
+~~~sh
+python scripts/check_ui_signals.py /path/to/project/src
+python scripts/check_ui_signals.py /path/to/project/src --json
+~~~
+
+It is read-only and never edits files. Findings need context review; a clean scan does not establish visual quality, accessibility, or functional correctness. `--fail-on-findings` is available when a project deliberately wants these limited signals to fail a local check.
 
 ## First contact and runtime status
 
@@ -72,17 +85,18 @@ README.md
 assets/ai-frontend-studio.svg
 skills/<module>/SKILL.md
 references/
+scripts/
 examples/
 evaluations/scenarios.md
 ~~~
 
-The ten skills are frontend-router, art-direction, landing-page-builder, logo-and-icons, interaction-states, motion-and-scroll, interactive-3d, frontend-security, frontend-performance, and rendered-ui-review.
+The ten skills are frontend-router, art-direction, landing-page-builder, logo-and-icons, interaction-states, motion-and-scroll, interactive-3d, frontend-security, frontend-performance, and rendered-ui-review. Optional, no-dependency scripts provide narrow source signals; they do not replace rendered review.
 
 Keep the package together when distributing it. Skills link to shared files in references and examples, so a single SKILL.md is not a complete export.
 
 ## Source and licensing
 
-The workflow is derived from the project’s research findings, reference catalog, plugin blueprint, and existing skills-only prototype. See [references/source-index.md](references/source-index.md) for the capability-to-source map, source metadata, contributions, limitations, and licensing notes.
+The workflow is derived from the project’s research findings, reference catalog, plugin blueprint, existing skills-only prototype, and a comparative review of publicly inspectable design-agent sources with different license terms. See [references/source-index.md](references/source-index.md) for the capability-to-source map, license classifications, source contributions, evidence limits, and reuse notes. No third-party skill text, code, checker, database, or design assets were copied into this package.
 
 This repository uses the custom source-available [SAVL-1.0 license](LICENSE), not an open-source license. Its terms allow narrow viewing for personal evaluation but restrict copying, modification, deployment, and use of covered material by AI systems. That AI-use restriction conflicts with using this package as a Codex plugin unless the rights holder separately authorizes that use or revises the terms. Resolve this before installing or distributing the package for AI use.
 

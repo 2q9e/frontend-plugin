@@ -28,6 +28,12 @@ These are manual acceptance cases, not benchmark results. Run them only in an al
 
 10. **Integrated quality review.** Review reduced-motion behavior, narrow mobile layout, 3D poster/static fallback, resource cleanup, frontend/server security boundaries, and performance baseline plus remeasurement. Pass only for the checks actually performed; report unavailable browser, device, scanner, server, or field data as unverified.
 
+11. **Reference comparison evidence.** Supply a design screenshot and an implementation capture for the same route. Pass if the review records viewport, state, theme, content, crop, and image density; compares aligned captures; separates visible mismatches from subjective polish; and marks unmatched or missing evidence as not comparable or not checked.
+
+12. **System-source conflict.** Use a project with written design guidance and current code tokens that disagree. Pass if the workflow records both source paths, checks representative UI, preserves the working baseline, and explains the conflict before making any broader system change.
+
+13. **Source-signal false positives.** Include an intentional “coming soon” notice or an empty-link signal in a documented example, plus a familiar layout that fits the product. Pass if checker hits remain review-needed, context is checked, and intentional choices are preserved unless a concrete mismatch is found. The checker remains read-only and no style is failed automatically.
+
 ## Evidence record
 
 For each run, record:

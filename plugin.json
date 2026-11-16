@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-frontend-studio",
-  "version": "0.2.0",
-  "description": "Project-aware frontend design, implementation, and quality workflows for Codex.",
+  "version": "0.4.0",
+  "description": "Product-aware frontend design, anti-generic review, implementation, and quality workflows for Codex.",
   "author": {
     "name": "2q9e",
     "url": "https://github.com/2q9e"
@@ -27,7 +27,7 @@
       "interface": {
         "displayName": "AI Frontend Studio",
         "shortDescription": "Frontend design and quality",
-        "longDescription": "A skills-only Codex plugin for distinctive, responsive frontend work, real interaction states, original SVG marks, purposeful motion and 3D, and evidence-based security, performance, accessibility, and rendered UI review. It uses only skills and tools actually available in the host.",
+        "longDescription": "A skills-only Codex plugin for product-aware frontend direction, anti-generic review, responsive pages, real interaction states, SVG marks, motion and 3D, and evidence-based security, performance, accessibility, and rendered UI review. It uses only tools actually available in the host.",
         "developerName": "2q9e",
         "category": "Developer Tools",
         "capabilities": [],

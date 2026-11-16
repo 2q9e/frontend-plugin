@@ -7,13 +7,15 @@ description: Set a product- and audience-grounded visual direction for frontend 
 
 Turn the brief and the existing product into a small, usable visual direction. The aim is a coherent interface with a reason behind its choices, not novelty for its own sake.
 
+Use the [design contract](../../references/design-contract.md) to record the user outcome, product evidence, existing system, visual thesis, and observable acceptance checks when the work spans more than a small isolated change. Do not create a persistent `DESIGN.md` unless requested or a multi-surface project needs a durable shared direction.
+
 ## Workflow
 
-1. **Inspect the project first.** Read the relevant routes and components, then identify the framework, design tokens, typography, spacing, color conventions, icon set, image assets, and responsive patterns already in use. Keep the established system intact. Extend it with a small number of tokens or components only where the work needs them; do not replace the design system or add a library just to change the look.
+1. **Inspect the project first.** Read applicable repository instructions and look for a `DESIGN.md`, brand/style guide, component documentation, or other project-owned design reference. Verify its stated tokens and patterns against the current components and a representative rendered screen. If no design document exists, treat the code tokens and established components as the system. Record meaningful documentation/code conflicts in the [design contract](../../references/design-contract.md); do not silently replace a working baseline. Extend it with a small number of tokens or components only where the work needs them; do not add a library just to change the look.
 
 2. **Ground the direction in the product.** Establish the intended audience, their task, the page or feature goal, the product's actual distinguishing qualities, brand tone, content available, and practical constraints. Use the user brief and repository as evidence. Do not invent customer logos, testimonials, metrics, pricing, certifications, or product capabilities. If a missing fact would change the direction materially, ask one focused question; otherwise state a modest assumption and continue.
 
-3. **Write a visual thesis.** In one or two sentences, connect the intended feeling and hierarchy to the audience and product. Decide what users should notice first, what should feel trustworthy or distinctive, and what visual evidence supports that impression. Do not use a fixed anti-style blacklist: a pattern is suitable when it serves this product and audience, and unsuitable when it does not.
+3. **Write a visual thesis.** In one or two sentences, connect the intended feeling and hierarchy to the audience and product. Decide what users should notice first, what should feel trustworthy or distinctive, and what visual evidence supports that impression. When neither the user nor the existing system establishes a direction, compare up to three genuinely different options across page shape, typography, imagery/material, density, or interaction. Choose by product fit and implementation cost, not by novelty or random rotation. Follow explicit user direction and established design systems instead of generating alternatives.
 
 4. **Translate the thesis into usable rules.** Choose a restrained set of decisions for:
    - type roles, scale, line length, and emphasis;
@@ -34,6 +36,8 @@ Turn the brief and the existing product into a small, usable visual direction. T
 ## Sources and review
 
 - Use the shared [design rubric](../../references/design-rubric.md) to check fit, hierarchy, accessibility, and coherence.
+- Use the [anti-generic review](../../references/anti-generic-review.md) to question default-looking decisions without treating any font, color, gradient, or layout as universally wrong.
+- Use the [design-pattern index](../../references/design-pattern-index.md) to retrieve only references relevant to the user's product task and current stack.
 - Use the [source index](../../references/source-index.md) for public examples of design systems, landing pages, and visual workflows. Treat references as pattern inspiration, not permission to copy code, copy, logos, illustrations, photographs, or other assets. Verify the source's current license and asset terms before reuse.
 - Use only tools that are actually available in the current host. Figma, browser rendering, screenshot capture, and image generation are optional capabilities. State the limitation and use the best available fallback rather than implying a tool was used.
 
