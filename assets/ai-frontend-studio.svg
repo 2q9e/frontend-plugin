@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">AI Frontend Studio</title>
+  <rect width="512" height="512" rx="112" fill="#182A35"/>
+  <path d="M151 144h210v48H199v65h142v48H199v63h-48V144Z" fill="#E6F2EC"/>
+  <path d="M301 303h60v65h-60z" fill="#88D8BD"/>
+</svg>
