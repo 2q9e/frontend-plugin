@@ -1,0 +1,276 @@
+/*
+ * Optional, adaptable visual treatment for transaction-states.tsx.
+ * Success motion only appears after the operation adapter confirms completion.
+ * Customize these tokens to match the host product's design system.
+ */
+
+.transaction-states {
+  --transaction-accent: #276c5a;
+  --transaction-ink: #18252b;
+  --transaction-muted: #52636b;
+  --transaction-line: #d8e0e2;
+  --transaction-surface: #ffffff;
+  --transaction-success: #236348;
+  --transaction-warning: #79551a;
+
+  display: grid;
+  gap: 1rem;
+  color: var(--transaction-ink);
+  font: inherit;
+}
+
+.transaction-states__fields {
+  display: grid;
+  gap: 1rem;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.transaction-states__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.transaction-states__submit,
+.transaction-states__cancel,
+.transaction-states__check-status {
+  display: inline-flex;
+  min-block-size: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid var(--transaction-line);
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  color: var(--transaction-ink);
+  background: var(--transaction-surface);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.transaction-states__submit {
+  border-color: var(--transaction-accent);
+  color: #ffffff;
+  background: var(--transaction-accent);
+}
+
+.transaction-states__submit:not(:disabled):not([aria-disabled="true"]):hover,
+.transaction-states__cancel:not(:disabled):not([aria-disabled="true"]):hover,
+.transaction-states__check-status:not(:disabled):not([aria-disabled="true"]):hover {
+  transform: translateY(-1px);
+}
+
+.transaction-states__cancel:not(:disabled):not([aria-disabled="true"]):hover,
+.transaction-states__check-status:not(:disabled):not([aria-disabled="true"]):hover {
+  border-color: var(--transaction-accent);
+  background: #f1f6f4;
+  background: color-mix(in srgb, var(--transaction-accent) 7%, white);
+}
+
+.transaction-states__submit:not(:disabled):not([aria-disabled="true"]):active,
+.transaction-states__cancel:not(:disabled):not([aria-disabled="true"]):active,
+.transaction-states__check-status:not(:disabled):not([aria-disabled="true"]):active {
+  transform: translateY(0) scale(0.985);
+}
+
+.transaction-states__submit:focus-visible,
+.transaction-states__cancel:focus-visible,
+.transaction-states__check-status:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--transaction-accent) 48%, white);
+  outline-offset: 3px;
+}
+
+.transaction-states__submit:disabled,
+.transaction-states__cancel:disabled,
+.transaction-states__submit[aria-disabled="true"],
+.transaction-states__cancel[aria-disabled="true"],
+.transaction-states__check-status[aria-disabled="true"] {
+  cursor: wait;
+}
+
+.transaction-states__submit:disabled {
+  opacity: 0.88;
+}
+
+.transaction-states__status {
+  min-block-size: 1.25em;
+  margin: 0;
+  color: var(--transaction-muted);
+}
+
+.transaction-states__progress-wrap {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.transaction-states__progress-label {
+  color: var(--transaction-ink);
+  font-weight: 600;
+}
+
+.transaction-states__progress {
+  inline-size: 100%;
+  block-size: 0.65rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  accent-color: var(--transaction-accent);
+}
+
+.transaction-states__progress::-webkit-progress-bar {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--transaction-accent) 12%, white);
+}
+
+.transaction-states__progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: var(--transaction-accent);
+  transition: width 220ms ease;
+}
+
+.transaction-states__progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--transaction-accent);
+}
+
+.transaction-states__outcome {
+  display: grid;
+  gap: 0.5rem;
+  border: 1px solid var(--transaction-line);
+  border-radius: 1rem;
+  padding: 1rem 1.125rem;
+  background: var(--transaction-surface);
+  animation: transaction-outcome-enter 320ms cubic-bezier(0.2, 0.75, 0.25, 1)
+    both;
+}
+
+.transaction-states__outcome h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.transaction-states__outcome p {
+  margin: 0;
+}
+
+.transaction-states__outcome[data-outcome="success"] {
+  border-color: #b7d7c8;
+  border-color: color-mix(in srgb, var(--transaction-success) 34%, white);
+  background: #f2f8f4;
+  background: color-mix(in srgb, var(--transaction-success) 5%, white);
+}
+
+.transaction-states__outcome[data-outcome="success"] h2 {
+  color: var(--transaction-success);
+}
+
+.transaction-states__success-mark {
+  display: inline-grid;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--transaction-success);
+  background: #e6f1eb;
+  background: color-mix(in srgb, var(--transaction-success) 14%, white);
+  animation: transaction-success-pop 360ms cubic-bezier(0.2, 0.8, 0.25, 1.2)
+    both;
+}
+
+.transaction-states__success-mark::after {
+  inline-size: 0.38rem;
+  block-size: 0.68rem;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  transform: translateY(-0.06rem) rotate(45deg);
+}
+
+.transaction-states__outcome[data-outcome="unknown"] {
+  border-color: #dfcda9;
+  border-color: color-mix(in srgb, var(--transaction-warning) 32%, white);
+  background: #fbf7ed;
+  background: color-mix(in srgb, var(--transaction-warning) 5%, white);
+}
+
+.transaction-states[data-state="pending"] .transaction-states__submit::before,
+.transaction-states[data-state="running"] .transaction-states__submit::before,
+.transaction-states[data-state="cancelling"] .transaction-states__submit::before,
+.transaction-states[data-state="reconciling"]
+  .transaction-states__submit::before {
+  inline-size: 0.9rem;
+  block-size: 0.9rem;
+  border: 2px solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: 50%;
+  content: "";
+  animation: transaction-spinner 780ms linear infinite;
+}
+
+.transaction-states[data-state="running"] .transaction-states__progress {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--transaction-accent) 9%, white);
+}
+
+@keyframes transaction-spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes transaction-outcome-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes transaction-success-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transaction-states *,
+  .transaction-states *::before,
+  .transaction-states *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .transaction-states__submit:not(:disabled):not([aria-disabled="true"]):hover,
+  .transaction-states__cancel:not(:disabled):not([aria-disabled="true"]):hover,
+  .transaction-states__check-status:not(:disabled):not([aria-disabled="true"]):hover,
+  .transaction-states__submit:not(:disabled):not([aria-disabled="true"]):active,
+  .transaction-states__cancel:not(:disabled):not([aria-disabled="true"]):active,
+  .transaction-states__check-status:not(:disabled):not([aria-disabled="true"]):active {
+    transform: none;
+  }
+}
