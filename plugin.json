@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-frontend-studio",
+  "version": "0.2.0",
+  "description": "Project-aware frontend design, implementation, and quality workflows for Codex.",
+  "author": {
+    "name": "2q9e",
+    "url": "https://github.com/2q9e"
+  },
+  "homepage": "https://github.com/2q9e/frontend-plugin#readme",
+  "repository": "https://github.com/2q9e/frontend-plugin",
+  "license": "LicenseRef-SAVL-1.0",
+  "keywords": [
+    "frontend",
+    "web-design",
+    "landing-pages",
+    "accessibility",
+    "motion",
+    "3d",
+    "security",
+    "performance",
+    "codex-plugin"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/frontend-router/SKILL.md",
+      "interface": {
+        "displayName": "AI Frontend Studio",
+        "shortDescription": "Frontend design and quality",
+        "longDescription": "A skills-only Codex plugin for distinctive, responsive frontend work, real interaction states, original SVG marks, purposeful motion and 3D, and evidence-based security, performance, accessibility, and rendered UI review. It uses only skills and tools actually available in the host.",
+        "developerName": "2q9e",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": [
+          "Show me the AI Frontend Studio capability menu.",
+          "Build or refine a landing page in this project and review it at desktop and mobile sizes."
+        ],
+        "logo": "./assets/ai-frontend-studio.svg",
+        "composerIcon": "./assets/ai-frontend-studio.svg",
+        "brandColor": "#182A35"
+      }
+    }
+  }
+}
