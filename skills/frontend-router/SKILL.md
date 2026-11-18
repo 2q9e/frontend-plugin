@@ -46,6 +46,8 @@ End with: “Which one would you like to work on? Reply with a number or describ
 | User goal | Select these packaged skills |
 |---|---|
 | New or refined landing page/site | frontend-router → art-direction + landing-page-builder → rendered-ui-review |
+| Build/refine from a supplied screenshot or visual reference | frontend-router → art-direction + landing-page-builder + rendered-ui-review; add interactive-3d or motion-and-scroll when the reference depends on those behaviors |
+| Compare a current render with a supplied reference or diagnose why it diverged | frontend-router → rendered-ui-review; add art-direction when the visual direction must change, and implementation skills only when the user asks for changes |
 | Visual direction or less generic UI | frontend-router → art-direction; include landing-page-builder for implementation and rendered-ui-review for rendered critique |
 | Logo, favicon, or interface icons | frontend-router → logo-and-icons; include rendered-ui-review if integrated into a page |
 | Loading, upload, order, or checkout flow | frontend-router → interaction-states; add frontend-security for relevant boundaries and rendered-ui-review for visual and keyboard verification |
@@ -83,8 +85,11 @@ Use local file and command tools only when the host actually provides them. Comb
 8. Inspect rendered output at representative wide and narrow sizes when browser tools are available. Otherwise report source-only review.
 9. Report changed files, evidence, tools and states actually checked, limitations, and server/owner actions still needed.
 
+For screenshot-driven work, first label each image's role from the user's wording: target reference, current result, alternate state, or inspiration. Keep those roles distinct through implementation and review. Preserve the reference's requested composition and interaction while adapting the user's real brand, content, and assets; do not reduce the request to shared colors or subject matter. If the roles remain ambiguous and lead to different work, ask one focused question.
+
 ## Claims and references
 
 Use [the source index](../../references/source-index.md) to trace these workflows to research inputs and primary guidance. It records contributions and limits. Linked sources are for study; this package redistributes no third-party code or assets.
 
 Never claim that an unavailable tool was used, that a frontend review certifies backend security, that an automated accessibility scan establishes full WCAG conformance, or that a lab score is field Core Web Vitals.
+

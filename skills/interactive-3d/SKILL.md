@@ -11,6 +11,7 @@ Use 3D when rotation, depth, spatial explanation, or scene interaction improves 
 
 - Read the target page, framework, routing/build setup, installed packages, existing canvas/WebGL usage, asset pipeline, and supported devices before selecting a renderer. Do not assume Blender, Three.js, React Three Fiber (R3F), `<model-viewer>`, compression decoders, or a particular browser capability is available.
 - Clarify the scene's purpose and interactions: product orbit/zoom, configurator, animated illustration, scroll-linked story, or full 3D environment. Decide whether the same task works better as a poster, video, CSS, SVG, or standard DOM.
+- When a screenshot or design reference shows a specific gesture or state change, record the user's intended action from it (for example, pull a cap off, open a lid, reveal a part, or rotate an object). Implement that action as the primary interaction. Do not substitute a generic orbit/turn control just because the existing scene already supports it; keep other useful controls secondary.
 - Inspect each model's file format, dimensions, scale, coordinate orientation, pivot, materials, animation clips, texture sizes, provenance, and license. Do not reuse an asset whose rights or attribution requirements are unknown.
 - Use [Three.js and scroll patterns](../../references/threejs-scroll-patterns.md) and the [source index](../../references/source-index.md) for implementation references. Check current project/API versions and asset licenses; a tool's license does not license its example models or textures.
 
@@ -36,6 +37,7 @@ Choose one renderer for the feature and avoid loading parallel render stacks. If
 - Render an appropriately sized poster first and reserve its layout space to prevent layout shift. Lazy-load the 3D runtime and model when the scene approaches the viewport or the user asks to interact. Avoid downloading a large scene before it is needed.
 - Keep the HTML title, description, price, options, and actions outside the canvas. Give a decorative canvas an empty accessible treatment; for meaningful 3D, provide a concise text description and equivalent controls or product information in DOM.
 - Provide visible control instructions and accessible names. Ensure rotate/zoom/configuration actions are operable by keyboard and touch, with buttons or other native controls as appropriate. Do not make drag the only route to inspect or select something; preserve page scrolling and avoid scroll hijacking.
+- Map reference gestures to native, accessible controls as well as pointer input. Keep the state visible and truthful, and make the control geometry and placement support the same focal action shown in the reference.
 - Provide a reduced-motion mode that stops automatic rotation, parallax, and scroll-scrubbing. Leave a user-requested, discrete model rotation under the user's control when the design allows. Respect browser and in-product motion preferences.
 - Handle loading, progress, ready, unsupported WebGL, decode failure, network failure, and retry states. Show a determinate percentage only when the loader can report meaningful progress; otherwise show an indeterminate status. Preserve the poster and useful product information when WebGL or the model fails.
 
@@ -50,3 +52,4 @@ Choose one renderer for the feature and avoid loading parallel render stacks. If
 ## 6. Review fallbacks and interaction
 
 Review the feature with WebGL unavailable, a slow or failed model request, reduced motion, keyboard-only use, touch, narrow layout, and a representative lower-powered device. Confirm that the poster reserves space, meaningful information and actions remain available without the scene, control instructions are clear, loading/error feedback is truthful, motion can be stopped, and navigating away releases GPU and event resources.
+
