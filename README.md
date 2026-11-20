@@ -2,9 +2,9 @@
 
 # AI Frontend Studio
 
-**Repository description:** Project-aware frontend design, implementation, and quality workflows for Codex, from landing pages and interaction states to motion, 3D, security, performance, and rendered UI review.
+AI Frontend Studio packages ten skills for planning, building, and reviewing interfaces in an existing project. The workflows cover visual direction, landing pages, interaction states, motion and 3D, accessibility, security, performance, and review of the rendered UI.
 
-AI Frontend Studio is a skills-only plugin package. Its ten focused skills help an agent work in an existing frontend project, preserve its design system, build real interface behavior, and report what it could and could not verify. The package contains reusable instructions, references, original examples, and an editable SVG mark. It does not bundle an MCP server, browser, design editor, image generator, security scanner, backend, or 3D modeling application.
+Start with [Frontend Router](skills/frontend-router/SKILL.md), then use the table below to choose the skills that fit the work.
 
 ## Capabilities
 
